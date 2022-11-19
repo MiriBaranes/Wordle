@@ -18,13 +18,25 @@ function makeAWordBord() {
     }
     submitButton();
 }
+function checkWinn(endRow){
+    let count=0;
+    let winn=false;
+    for (let i = 0; i < MAX_COLUM; i++) {
+        if (document.getElementById(makeStringIdByRowAndColum(endRow,i)).style.backgroundColor===RIGHT_GUESS_COLOR){
+            count++;
+        }
+    }
+    if (count===MAX_COLUM){
+        winn=true;
+    }
+    return winn;
+}
 
 function getImage(endRow) {
     let greenPlaces = [];
     for (let i = 0; i <= endRow; i++) {
         for (let j = 0; j < MAX_COLUM; j++) {
             const element = document.getElementById(makeStringIdByRowAndColum(i, j));
-            moveTo(element.x+1,element.y+1);
             if (element.style.backgroundColor.toString() === RIGHT_GUESS_COLOR) {
                 greenPlaces.push(makeLocationJSON(i, j));
             }

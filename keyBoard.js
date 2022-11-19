@@ -21,15 +21,24 @@ function submitButton() {
     }
     span.appendChild(submit);
 }
-function sentButtonAct (){
+
+function sentButtonAct() {
     let row = getLocationObject().row;
     if (checkLengthWord(row)) {
         paint(row, getFullUserWord(row));
-        let location = getLocationObject().location;
-        location.setAttribute(ROW, Number(row) + 1 + "");
-        location.setAttribute(COLUM, 0 + "");
-    }
-    else {
+        let location = getLocationObject();
+        if (!checkWinn(row)) {
+            if (Number(location.row) !== MAX_ROW) {
+                location.location.setAttribute(ROW, Number(row) + 1 + "");
+                location.location.setAttribute(COLUM, 0 + "");
+            } else {
+                alert("Lost!")
+            }
+        }
+        else {
+            alert("Winn")
+        }
+    } else {
         alert(ERROR_MESSAGE);
     }
 }
