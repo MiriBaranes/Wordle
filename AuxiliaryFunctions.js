@@ -1,11 +1,12 @@
-function makeAElement(key, value, attributes) {
+function makeAElement(key, attributes, text) {
     let element = document.createElement(key);
-    let text = document.createTextNode(value);
-    for (let i = 0; i < attributes.length; i++) {
-        element.setAttribute(attributes[i][0], attributes[i][1]);
+    for(const key in attributes) {
+        element.setAttribute(key, attributes[key]);
     }
-    if (value != null) {
-        element.appendChild(text);
+    if (text) {
+        let textNode = document.createTextNode(text);
+        element.appendChild(textNode);
     }
     return element;
 }
+

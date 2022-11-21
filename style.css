@@ -5,18 +5,22 @@ div{
     text-align: center;
     float: left;
     position: relative;
-    width: 100%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 input{
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
-    width: 0.5%;
+    font-size: 20px;
+    color: blue;
+    width: 10%;
     margin-top: 2px;
     margin-right: 2px;
     font-family: monospace;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     border: 1px solid #000;
     background-repeat: repeat-x;
 }
@@ -29,19 +33,31 @@ button{
     margin-top: 5px;
     margin-left: 1px;
     margin-right: 1px;
-    /*background-repeat: repeat-x;*/
 }
 button[id='מחיקה']{
     width:15%;
 }
 
-div[class='key_board']{
+.div[class='key_board']{
     margin-right: 15%;
     margin-left: 15%;
     width: 70%;
 }
 button[id='sent']{
-    margin-right: 15%;
-    margin-left: 15%;
-    width: 70%;
+    /*margin-right: %;*/
+    /*margin-left: 15%;*/
+    width: 100%;
+}
+div[class='header']{
+    padding: 5px;
+    font-size: 40px;
+    color: black;
+    background: white;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+div[id='message']{
+    margin-top: 20%;
+}
+body{
+    background: url("https://c0.wallpaperflare.com/preview/795/151/722/alphabet-close-up-game-glass.jpg");
 }

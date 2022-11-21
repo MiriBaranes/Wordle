@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="keyBoard.js" type="text/javascript"></script>
+    <script src="CheckInputFunction.js" type="text/javascript"></script>
     <script SRC="AuxiliaryFunctions.js" type="text/javascript"></script>
     <script src="constClass.js" type="text/javascript"></script>
-    <script src="WordBoard.js"type="text/javascript"></script>
-    <script src="choiceAWordForGame.js" type="text/javascript"></script>
+    <script src="InputFunction.js" type="text/javascript"></script>
+    <script src="LocationFunction.js" type="text/javascript"></script>
+    <script src="MakeElementsForGame.js" type="text/javascript"></script>
+    <script src="StyleElements.js" type="text/javascript"></script>
+    <script src="wordGame.js" type="text/javascript"></script>
+    <script src="EndGamePanel.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="makeAWordBord() ; createAKeyBoard(); setFocus(); createWordForGame()">
-<div id="words_board" r="0" c="0">
-
-
+<body onload="makeAWordBord();
+    createAKeyBoard();
+    setFocus();
+    createWordGameOnCookie()">
+<div class="header">
+    Wordly
 </div>
-
+<div id="words_board" r="0" c="0">
+</div>
 </body>
 </html>
