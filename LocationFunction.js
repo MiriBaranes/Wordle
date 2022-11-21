@@ -50,9 +50,7 @@ function setLocation(type, colum) {
 }
 function setColumNumber(newColum, locationElement) {
     locationElement.setAttribute(COLUM, String(newColum));
-    if (newColum !== MAX_COLUM) {
-        setFocus();
-    }
+    setFocus();
 }
 function setFocus() {
     getActiveInputJsonObject().myElement.focus();
