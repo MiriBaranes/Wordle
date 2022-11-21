@@ -22,12 +22,12 @@ function sentButtonAct() {
 
 function checkWinn(endRow) {
     let count = 0;
-    for (let i = 0; i < MAX_COLUM; i++) {
+    for (let i = 0; i <= MAX_COLUM; i++) {
         if (document.getElementById(makeStringIdByRowAndColum(endRow, i)).style.backgroundColor === RIGHT_GUESS_COLOR) {
             count++;
         }
     }
-    return (count === MAX_COLUM)
+    return (count === MAX_COLUM+1)
 }
 
 function checkLengthWord(row) {
