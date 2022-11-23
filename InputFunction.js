@@ -36,7 +36,7 @@ function getActiveInputJsonObject() {
         myElement: element,
         row: location.row,
         colum: location.colum,
-        text: element.textContent
+        text: element?.textContent
     };
 
 }

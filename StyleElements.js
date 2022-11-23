@@ -8,8 +8,7 @@ function styleElements(row, userWord) {
         } else if (gameWord.includes(userWord[i]) && allowPaint(userWord[i], userWord, i, gameWord)) {
             color = RIGHT_GUESS_IN_WRONG_LOCATION;
         }
-        setColor(id, color, userWord[i]);
-        // unClicked(id);
+        setColor(id, row,color, userWord[i], i);
     }
 }
 
@@ -38,21 +37,21 @@ function allowPaint(char, userWord, index, gameWord) {
     return countChars(char, gameWord) - (countChars(char, userWord.substring(0, index - 1)) + countRightGussChar(char, userWord, gameWord)) > 0;
 }
 
-function setColor(id, color, char) {
+function setColor(id, row,color, char) {
     let element = document.getElementById(id);
     element.style.backgroundColor = color;
+    // moveRow(id, color, i);
+
     let keyElement = document.getElementById(char);
     if (keyElement?.style.backgroundColor !== RIGHT_GUESS_COLOR) {
         keyElement.style.backgroundColor = color;
     }
 }
 
-// function unClicked(id) {
-//     document.getElementById(id).style.pointerEvents = NONE;
-// }
-
-// function allowClick(row) {
-//     for (let i = 0; i <= MAX_COLUM; i++) {
-//         document.getElementById(makeStringIdByRowAndColum(row, i)).style.pointerEvents = '';
-//     }
+// function moveRow(id, color, index) {
+//     setTimeout(() => {
+//         const input = document.getElementById(id);
+//         input.classList.add("animate__jello");
+//         input.style.backgroundColor = color;
+//     }, 200 * index);
 // }

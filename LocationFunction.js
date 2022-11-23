@@ -19,13 +19,9 @@ function setLocation(type, colum) {
 
 function setColumNumber(newColum, locationElement) {
     locationElement.setAttribute(COLUM, String(newColum));
-    getActiveInputJsonObject().myElement.focus();
+    getActiveInputJsonObject().myElement?.focus();
 }
 
 function setFocus() {
     getActiveInputJsonObject().myElement.focus();
-}
-
-function getCookiesByName(name) {
-    return document.cookie.split(name)[1].split("=")[1].split(";")[0];
 }
