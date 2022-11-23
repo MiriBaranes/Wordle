@@ -12,6 +12,7 @@ function createAKeyBoard() {
     }
 }
 
+
 function submitButton() {
     let span = makeAElement(DIV, {id: SENT_BUTTON_ID});
     document.body.appendChild(span);
@@ -29,9 +30,9 @@ function makeAWordBord() {
         wordBord.appendChild(row);
         for (let j = MAX_COLUM; j >= 0; j--) {
             let latterSpace = makeAElement(INPUT, {id: makeStringIdByRowAndColum(i, j), type: 'text', maxLength: 1});
-            if (i !== 0) {
-                latterSpace.style.pointerEvents = NONE;
-            }
+            // if (i !== 0) {
+            latterSpace.style.pointerEvents = NONE;
+
             latterSpace.onclick = function () {
                 setLocation(TO_MOVE_BY_CLICK, j);
             }
@@ -40,5 +41,6 @@ function makeAWordBord() {
     }
     submitButton();
 }
-function onKeyUp(){
+
+function onKeyUp() {
 }

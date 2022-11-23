@@ -2,16 +2,14 @@ function styleElements(row, userWord) {
     let gameWord = readWordGameFromCookie().toString();
     for (let i = 0; i < userWord.length; i++) {
         let id = makeStringIdByRowAndColum(row, i);
-        unClicked(id);
+        let color = WRONG_GUESS_COLOR;
         if (userWord[i] === gameWord[i]) {
-            setColor(id, RIGHT_GUESS_COLOR, userWord[i]);
-        } else {
-            if (gameWord.includes(userWord[i]) && allowPaint(userWord[i], userWord, i, gameWord)) {
-                setColor(id, RIGHT_GUESS_IN_WRONG_LOCATION, userWord[i]);
-            } else {
-                setColor(id, WRONG_GUESS_COLOR, userWord[i]);
-            }
+            color = RIGHT_GUESS_COLOR;
+        } else if (gameWord.includes(userWord[i]) && allowPaint(userWord[i], userWord, i, gameWord)) {
+            color = RIGHT_GUESS_IN_WRONG_LOCATION;
         }
+        setColor(id, color, userWord[i]);
+        // unClicked(id);
     }
 }
 
@@ -49,12 +47,12 @@ function setColor(id, color, char) {
     }
 }
 
-function unClicked(id) {
-    document.getElementById(id ).style.pointerEvents = NONE;
-}
+// function unClicked(id) {
+//     document.getElementById(id).style.pointerEvents = NONE;
+// }
 
-function allowClick(row) {
-    for (let i = 0; i <= MAX_COLUM; i++) {
-        document.getElementById(makeStringIdByRowAndColum(row, i)).style.pointerEvents = '';
-    }
-}
+// function allowClick(row) {
+//     for (let i = 0; i <= MAX_COLUM; i++) {
+//         document.getElementById(makeStringIdByRowAndColum(row, i)).style.pointerEvents = '';
+//     }
+// }

@@ -1,6 +1,5 @@
 function createWordGameOnCookie() {
     document.cookie=SELECTED_WORD_ID+"="+randomWord();
-    makeLocationCookies();
 }
 function readWordGameFromCookie(){
     return getCookiesByName(SELECTED_WORD_ID);

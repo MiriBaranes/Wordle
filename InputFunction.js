@@ -8,21 +8,22 @@ function getTextByType(type, text) {
 
 function getTypeButton(index) {
     let type = TO_MOVE;
-    if (index === (ELEMENT_KEY_BORD.length - 1))
-        type = isEmptyInput() ? TO_REMOVE : TO_REMOVE_THIS_INPUT;
-
+    if (index === (ELEMENT_KEY_BORD.length - 1)) {
+        type = TO_REMOVE;
+    }
     return type;
 }
 
 function setValue(newText, typeKey) {
-    const rowElement = document.getElementById(getLocationObject().id);
+    let colum=Number(getLocationObject().colum);
+    if (typeKey===TO_REMOVE){
+        colum--;
+    }
+    const rowElement = document.getElementById(makeStringIdByRowAndColum(getLocationObject().row,colum));
     rowElement.value = newText;
-    setLocation(typeKey, Number(getLocationObject().colum));
+    setLocation(typeKey, colum);
 }
 
-function isEmptyInput() {
-    return getActiveInputJsonObject().text === '';
-}
 function makeStringIdByRowAndColum(row, colum) {
     return ROW + row + COLUM + colum;
 }

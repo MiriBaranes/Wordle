@@ -8,7 +8,7 @@ function sentButtonAct() {
                 row = row + 1;
                 locationObject.location.setAttribute(ROW, row.toString());
                 locationObject.location.setAttribute(COLUM, "0");
-                allowClick(row);
+                // allowClick(row);
             } else {
                 end(checkWinn(row));
             }
