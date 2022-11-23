@@ -21,13 +21,14 @@ function submitButton() {
     }
     span.appendChild(submit);
 }
+
 function makeAWordBord() {
     let wordBord = document.getElementById(WORDS_BOARD);
     for (let i = 0; i < MAX_ROW + 1; i++) {
         let row = makeAElement(DIV, {class: ROW + i});
         wordBord.appendChild(row);
         for (let j = MAX_COLUM; j >= 0; j--) {
-            let latterSpace = makeAElement(INPUT, {id: makeStringIdByRowAndColum(i, j), type: 'text'});
+            let latterSpace = makeAElement(INPUT, {id: makeStringIdByRowAndColum(i, j), type: 'text', maxLength: 1});
             if (i !== 0) {
                 latterSpace.style.pointerEvents = NONE;
             }
@@ -38,4 +39,6 @@ function makeAWordBord() {
         }
     }
     submitButton();
+}
+function onKeyUp(){
 }
