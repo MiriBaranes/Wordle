@@ -20,10 +20,10 @@ function randomWord() {
     let random = Math.ceil(Math.random() * max);
     return WORDS[random];
 }
-function getFullUserWord(rowNumber) {
-    let ans = "";
-    for (let i = 0; i <=MAX_COLUM; i++) {
-        ans += document.getElementById(makeStringIdByRowAndColum(rowNumber, i)).value;
+function getFullUserWord() {
+    let ans ="";
+    for (let i = 0; i <locationObject.colum; i++) {
+        ans += document.getElementById(makeStringIdByRowAndColum(locationObject.row, i)).value;
     }
     return ans;
 }

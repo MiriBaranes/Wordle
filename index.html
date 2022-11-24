@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Wordle</title>
-<!--    <link rel="icon" type="image/gif"/>-->
     <script src="CheckInputFunction.js" type="text/javascript"></script>
     <script SRC="AuxiliaryFunctions.js" type="text/javascript"></script>
     <script src="constClass.js" type="text/javascript"></script>
-    <script src="InputFunction.js" type="text/javascript"></script>
     <script src="LocationFunction.js" type="text/javascript"></script>
     <script src="MakeElementsForGame.js" type="text/javascript"></script>
-    <script src="StyleElements.js" type="text/javascript"></script>
+    <script src="Paint.js" type="text/javascript"></script>
     <script src="wordGame.js" type="text/javascript"></script>
     <script src="EndGamePanel.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>-->
 </head>
 <body onload="makeAWordBord();
     createAKeyBoard();
-    setFocus();
     createGameCookie()">
 <div class="header">
     Wordle
 </div>
-<div id="words_board" r="0" c="0">
+<div id="words_board">
 </div>
 </body>
 </html>

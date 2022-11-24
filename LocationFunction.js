@@ -1,27 +1,45 @@
-function getLocationObject() {
-    const locationElement = document.getElementById(WORDS_BOARD);
-    return {
-        location: locationElement,
-        row: locationElement.getAttribute(ROW),
-        colum: locationElement.getAttribute(COLUM),
-        id: ROW + locationElement.getAttribute(ROW) + COLUM + locationElement.getAttribute(COLUM)
-    };
-}
 
 function setLocation(type, colum) {
     let newColum = colum;
     if (type === TO_MOVE && colum <= MAX_COLUM) {
         newColum++;
     }
-    const locationElement = getLocationObject().location;
-    setColumNumber(newColum, locationElement);
+    setLocationByRowAndColum(locationObject.row,newColum);
 }
 
-function setColumNumber(newColum, locationElement) {
-    locationElement.setAttribute(COLUM, String(newColum));
-    getActiveInputJsonObject().myElement?.focus();
+function setLocationByRowAndColum(row, newColum) {
+    locationObject.row = row;
+    locationObject.colum = newColum;
+}
+function setValue(newText, typeKey) {
+    let colum = locationObject.colum;
+    if (typeKey === TO_REMOVE) {
+        colum--;
+    }
+    const element = document.getElementById(makeStringIdByRowAndColum(locationObject.row, colum));
+    if (colum!==MAX_COLUM+1){
+        element.value = newText;
+    }
+    setLocation(typeKey, colum);
 }
 
-function setFocus() {
-    getActiveInputJsonObject().myElement.focus();
+function makeStringIdByRowAndColum(row, colum) {
+    return ROW + row + COLUM + colum;
+}
+function getTextByType(type, text) {
+    if (type !== TO_MOVE) {
+        text = '';
+    }
+    return text;
+}
+
+
+function getTypeButton(index) {
+    let type = TO_MOVE;
+    if (index === (ELEMENT_KEY_BORD.length - 2)) {
+        type = TO_REMOVE;
+    } else if (index === ELEMENT_KEY_BORD.length-1) {
+        type = SENT;
+    }
+    return type;
 }

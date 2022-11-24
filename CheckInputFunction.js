@@ -1,16 +1,10 @@
 function sentButtonAct() {
-    let locationObject = getLocationObject();
-    let row = Number(locationObject.row);
+    let row = locationObject.row;
     if (checkLengthWord(row)) {
-        styleElements(row, getFullUserWord(row));
-        if (!checkWinn(row)) {
-            if (row !== MAX_ROW) {
-                row = row + 1;
-                locationObject.location.setAttribute(ROW, row.toString());
-                locationObject.location.setAttribute(COLUM, "0");
-            } else {
-                end(checkWinn(row));
-            }
+        paint(row, getFullUserWord(row));
+        if (!checkWinn(row) && row !== MAX_ROW) {
+            row = row + 1;
+            setLocationByRowAndColum(row, 0);
         } else {
             end(checkWinn(row))
         }
@@ -19,14 +13,16 @@ function sentButtonAct() {
     }
 }
 
-function checkWinn(endRow) {
+function checkWinn() {
     let count = 0;
     for (let i = 0; i <= MAX_COLUM; i++) {
-        if (document.getElementById(makeStringIdByRowAndColum(endRow, i)).style.backgroundColor === RIGHT_GUESS_COLOR) {
+        if (document.getElementById(
+            makeStringIdByRowAndColum
+            (locationObject.row, i)).style.backgroundColor === RIGHT_GUESS_COLOR) {
             count++;
         }
     }
-    return (count === MAX_COLUM+1)
+    return (count === MAX_COLUM + 1)
 }
 
 function checkLengthWord(row) {

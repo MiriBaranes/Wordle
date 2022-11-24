@@ -1,5 +1,5 @@
 body {
-    background-color: powderblue;
+    background-color: white;
 }
 div{
     text-align: center;
@@ -9,53 +9,49 @@ div{
     margin-left: 15%;
     margin-right: 15%;
 }
-
 input{
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    font-size: 20px;
-    color: darkblue;
-    width: 10%;
-    margin-top: 2px;
-    margin-right: 2px;
+    font-size: 30px;
+    color: black;
+    width: 5.7%;
+    margin-top: 3px;
+    margin-right: 3px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 10px;
-    border: 1px solid #000;
+    border: 1px solid lightgray;
     background-repeat: repeat-x;
 }
 button{
     text-align: center;
     font-size: 15px;
-    padding: 20px;
+    padding: 17px;
     border-radius: 5px;
-    width: 0.5%;
+    border-color:rgb(210,217,230);
+    width: 0.3%;
     margin-top: 5px;
     margin-left: 1px;
     margin-right: 1px;
+    background-color:rgb(210,217,230);
 }
 button[id='מחיקה']{
-    width:15%;
+    width:10%;
 }
 
-.div[class='key_board']{
-    margin-right: 15%;
-    margin-left: 15%;
-    width: 70%;
+div[id='key_board']{
+    width: 54%;
+    margin:10px 22.6% 21%;
 }
-button[id='sent']{
-    width: 100%;
+button[id='בדיקה']{
+    width: 10%;
 }
 div[class='header']{
     padding: 5px;
     font-size: 40px;
-    color: black;
-    background: silver;
+    color: midnightblue;
     font-family: 'Trebuchet MS', sans-serif;
 }
 div[id='message']{
     margin-top: 20%;
-}
-body{
-    background: url("https://images2.minutemediacdn.com/image/upload/c_crop,w_2190,h_1231,x_0,y_136/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/mentalfloss/01g410jh5tadqfftxrxz.jpg");
 }
