@@ -6,7 +6,9 @@ function sentButtonAct() {
             row = row + 1;
             setLocationByRowAndColum(row, 0);
         } else {
-            end(checkWinn(row))
+            setTimeout(() => {
+                end(checkWinn(row))
+            }, 1000)
         }
     } else {
         alert(ERROR_MESSAGE);
