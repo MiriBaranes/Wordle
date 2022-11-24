@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-image: url("https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg");
 }
 div{
     text-align: center;
@@ -12,6 +12,7 @@ div{
 input{
     text-align: center;
     padding: 10px;
+    font-weight: bold;
     border-radius: 5px;
     font-size: 30px;
     color: black;
@@ -20,16 +21,17 @@ input{
     margin-right: 3px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid lightslategray;
     background-repeat: repeat-x;
 }
 button{
     text-align: center;
     font-size: 15px;
+    font-weight: bold;
     padding: 17px;
     border-radius: 5px;
     border-color:rgb(210,217,230);
-    width: 0.3%;
+    width: 0.2%;
     margin-top: 5px;
     margin-left: 1px;
     margin-right: 1px;
@@ -37,6 +39,8 @@ button{
 }
 button[id='מחיקה']{
     width:10%;
+    background: antiquewhite;
+    font-weight: bold;
 }
 
 div[id='key_board']{
@@ -45,13 +49,20 @@ div[id='key_board']{
 }
 button[id='בדיקה']{
     width: 10%;
+    background: antiquewhite;
+    font-weight: bold;
+    /*border-color:black;*/
 }
 div[class='header']{
     padding: 5px;
     font-size: 40px;
-    color: midnightblue;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline overline  burlywood;
     font-family: 'Trebuchet MS', sans-serif;
 }
 div[id='message']{
     margin-top: 20%;
+    background: burlywood;
+    font-weight: bold;
 }
